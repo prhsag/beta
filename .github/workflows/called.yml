@@ -1,0 +1,13 @@
+name: Called Workflow
+
+on:
+    workflow_call: 
+
+jobs:
+    print_secret:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Display Token
+              run: |
+                echo ${{secrets.BETA_TOKEN}}
