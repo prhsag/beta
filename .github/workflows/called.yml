@@ -9,6 +9,8 @@ jobs:
 
         steps:
             - name: Display Token
+              env:
+                ENV_SECRET: ${{ secrets.BETA_TOKEN }}  
               run: |
-                echo "sdfgsdfg"
+                echo $ENV_SECRET
 
