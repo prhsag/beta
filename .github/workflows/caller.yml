@@ -9,6 +9,7 @@ jobs:
         permissions: 
             issues: write
         uses: prhsag/alpha/.github/workflows/automatic-issue-creation.yml@main  
+        secrets: inherit
                 
 
              
