@@ -5,6 +5,9 @@ on:
 
 jobs:
     call_alpha_action:
+
+        permissions: 
+            issues: write
         uses: prhsag/alpha/.github/workflows/automatic-issue-creation.yml@main  
                 
 
