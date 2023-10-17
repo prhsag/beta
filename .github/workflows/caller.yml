@@ -1,0 +1,12 @@
+name: Calling Workflow in Alpha Repository
+
+on:
+    workflow_dispatch:  
+
+jobs:
+    call_alpha_action:
+        uses: prhsag/alpha/.github/workflows/automatic-issue-creation.yml@main  
+                
+
+             
+              
