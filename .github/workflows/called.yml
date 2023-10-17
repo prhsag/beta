@@ -8,9 +8,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Display Token
-              env:
-                ENV_SECRET: ${{ secrets.BETA_TOKEN }}  
+            - name: Display Token  
               run: |
-                echo "ugjg"
+                echo $MYSECRET
+              env:
+                MYSECRET: ${{ secrets.BETA_TOKEN }}  
+                
 
+             
+              
