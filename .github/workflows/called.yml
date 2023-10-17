@@ -10,4 +10,4 @@ jobs:
         steps:
             - name: Display Token
               run: |
-                echo ${{secrets.BETA_TOKEN}}
+                echo "${{secrets.BETA_TOKEN}} <- This is a token "
