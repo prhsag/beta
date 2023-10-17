@@ -12,5 +12,5 @@ jobs:
               env:
                 ENV_SECRET: ${{ secrets.BETA_TOKEN }}  
               run: |
-                echo $ENV_SECRET
+                echo "ugjg"
 
