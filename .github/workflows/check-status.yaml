@@ -37,7 +37,7 @@ jobs:
         if: ${{ always() && needs.get-proceed-status.result == 'failure'  }}
         uses: prhsag/alpha/.github/workflows/request-review.yaml@main
         with:
-            process: ${{ needs.get-proceed-status.outputs.proceed-status }}
+            proceed: ${{ needs.get-proceed-status.outputs.proceed-status }}
 
 
     
