@@ -29,15 +29,18 @@ jobs:
                 else
                     echo "Proceed Status: NOGO"
                     echo "PROCEED_STATUS=NOGO" >> $GITHUB_OUTPUT
-                    exit 1
                 fi
 
-    ask-approval:
-        needs: get-proceed-status
-        if: ${{ always() && needs.get-proceed-status.result == 'failure'  }}
-        uses: prhsag/alpha/.github/workflows/request-review.yaml@main
-        with:
-            proceed: ${{ needs.get-proceed-status.outputs.proceed-status }}
+          - name: Trigger Await Aproval Workflow (External)
+            if: ${{ steps.check-proceed-status.outputs.PROCEED_STATUS == 'GO'}}
+            uses: prhsag/beta/.github/actions/AwaitApproval@main
+
+    # ask-approval:
+    #     needs: get-proceed-status
+    #     if: ${{ always() && needs.get-proceed-status.result == 'failure'  }}
+    #     uses: prhsag/alpha/.github/workflows/request-review.yaml@main
+    #     with:
+    #         proceed: ${{ needs.get-proceed-status.outputs.proceed-status }}
 
 
     
