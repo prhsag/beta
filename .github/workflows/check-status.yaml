@@ -32,8 +32,11 @@ jobs:
                 fi
 
           - name: Trigger Await Aproval Workflow (External)
-            if: ${{ steps.check-proceed-status.outputs.PROCEED_STATUS == 'GO'}}
+            if: ${{ steps.check-proceed-status.outputs.PROCEED_STATUS == 'NOGO'}}
             uses: prhsag/beta/.github/actions/AwaitApproval@main
+            env:
+                TOKEN_PAT: ${{ secrets.TOKEN_PAT }}
+
 
     # ask-approval:
     #     needs: get-proceed-status
