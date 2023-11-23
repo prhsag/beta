@@ -16,7 +16,7 @@ jobs:
     deploy-preprod:
         runs-on: ubuntu-latest
         environment: PreProd
-        if: ${{ always() && (needs.check-status.result == 'skipped' || needs.check-status.result == 'success') }}
+        if: ${{ always() && (needs.check-status.result == 'skipped' || needs.check-status.result == 'failure') }}
         needs:  check-status
 
         steps:
