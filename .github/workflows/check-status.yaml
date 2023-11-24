@@ -17,7 +17,7 @@ jobs:
     deploy-preprod:
         runs-on: ubuntu-latest
         environment: PreProd
-        # if: ${{ always() && needs.check-status.outputs.proceed-status == 'GO'  }}
+        if: ${{ always() && needs.check-status.outputs.proceed-status == 'GO'  }}
         needs:  check-status
 
         steps:
