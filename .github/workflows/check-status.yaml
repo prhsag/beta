@@ -12,6 +12,7 @@ jobs:
         uses: prhsag/QM/.github/workflows/request-review.yaml@main
         with:
             proceed: ${{ github.event.inputs.proceed }}
+        secrets: inherit
 
     deploy-preprod:
         runs-on: ubuntu-latest
